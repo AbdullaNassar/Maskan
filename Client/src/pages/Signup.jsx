@@ -31,7 +31,8 @@ export default function Signup() {
         const msg = res?.data?.message?.[lang] || "signup success";
         console.log(msg, res);
         toast.success(msg);
-        navigate("/verifyOtp", { state: { email: payload.email } });
+        // navigate("/verifyOtp", { state: { email: payload.email } });
+        navigate("/");
       })
       .catch((err) => {
         const lang = i18n.language || "en";
