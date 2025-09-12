@@ -18,7 +18,8 @@
     "messageRequired": "Message is required",
     "toastSuccess": "Email sent successfully!",
     "toastError": "Failed to send email",
-    "description": "We'd love to hear from you. Send us a message and we'll respond assoon as possible."
+    "description": "We'd love to hear from you. Send us a message and we'll respond assoon as possible.",
+    " Get in Touch": "Get in Touch" 
   },
   "hero": {
     "title": "Find your perfect rental in Egypt",
@@ -136,7 +137,7 @@
     "forgotPassword": "Forgot Password?",
     "loginButton": "Log in",
     "noAccount": "Don't have an account?",
-    "signupButton": "SignUp",
+    "signupButton": "Sign Up",
     "validation": {
       "emailMin": "Email must be at least 3 characters",
       "emailMax": "Email must be less than 50 characters",
