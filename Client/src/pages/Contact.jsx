@@ -16,7 +16,7 @@ export default function Contact() {
     validationSchema: Yup.object({
       name: Yup.string().required(t("contact.nameRequired")),
       email: Yup.string()
-        .email(t("Contact.emailInvalid"))
+        .email(t("contact.emailInvalid"))
         .required(t("contact.emailRequired")),
       message: Yup.string().required(t("contact.messageRequired")),
     }),
@@ -149,8 +149,8 @@ export default function Contact() {
 
               {/* Submit Button */}
               <button
-                type="button"
-                className="w-full bg-[#C69963] hover:bg-[#b8935a] text-gray-50 py-4 rounded-xl font-semibold transition-all duration-200 transform hover:scale-[1.02] hover:shadow-lg text-sm flex items-center justify-center space-x-2"
+                type="submit"
+                className="w-full bg-[#C69963] hover:bg-[#b8935a] text-white py-4 rounded-xl font-semibold transition-all duration-200 transform hover:scale-[1.02] hover:shadow-lg text-sm flex items-center justify-center space-x-2"
               >
                 <svg
                   className="w-5 h-5"

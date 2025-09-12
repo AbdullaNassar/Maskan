@@ -31,11 +31,12 @@ export default function Signup() {
         const msg = res?.data?.message?.[lang] || "signup success";
         console.log(msg, res);
         toast.success(msg);
-        navigate("/verifyOtp", { state: { email: payload.email } });
+        // navigate("/verifyOtp", { state: { email: payload.email } });
+        navigate("/");
       })
       .catch((err) => {
         const lang = i18n.language || "en";
-        const msg = err.response?.data?.message?.[lang] || "An error occurred";
+        const msg = err.response?.data?.message?.[lang] || "Failed to sign up";
         SetErrMessage(msg);
         console.log(msg);
         toast.error(msg);
@@ -62,7 +63,7 @@ export default function Signup() {
       )
       .required(t("signup.validation.passwordRequired")),
     confirmPassword: YUP.string()
-      .oneOf([YUP.ref("password"), t("signup.validation.confirmPasswordMatch")])
+      .oneOf([YUP.ref("password")], t("signup.validation.confirmPasswordMatch"))
       .required(t("signup.validation.confirmPasswordRequired")),
     role: YUP.string()
       .oneOf(["guest", "host"], t("signup.validation.roleInvalid"))

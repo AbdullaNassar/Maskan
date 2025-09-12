@@ -137,7 +137,7 @@
     "forgotPassword": "Forgot Password?",
     "loginButton": "Log in",
     "noAccount": "Don't have an account?",
-    "signupButton": "SignUp",
+    "signupButton": "Sign Up",
     "validation": {
       "emailMin": "Email must be at least 3 characters",
       "emailMax": "Email must be less than 50 characters",
