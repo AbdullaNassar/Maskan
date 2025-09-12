@@ -108,7 +108,7 @@ export default function Profile() {
           )}
           <button
             onClick={() => setShowEditModal(true)}
-            className="sm:w-auto px-6 py-2 border rounded bg-gray-400 text-gray-100 hover:bg-gray-500 transition cursor-pointer"
+            className="sm:w-auto px-6 py-2 border rounded bg-gray-400 text-stone-100 hover:bg-gray-500 transition cursor-pointer"
             disabled={isRefetching}
           >
             {t("profile.Edit Profile")}
@@ -116,7 +116,7 @@ export default function Profile() {
 
           <button
             onClick={() => setEditPassword(true)}
-            className="sm:w-auto px-11 py-2 border rounded bg-gray-400 text-gray-100 hover:bg-gray-500 transition whitespace-nowrap cursor-pointer"
+            className="sm:w-auto px-11 py-2 border rounded bg-gray-400 text-stone-100 hover:bg-gray-500 transition whitespace-nowrap cursor-pointer"
           >
             {t("profile.Change Password")}
           </button>

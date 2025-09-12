@@ -67,7 +67,7 @@ export default function EditProfileModal({ onClose, onSuccess }) {
         onSubmit={formik.handleSubmit}
         className="w-full max-w-lg bg-gray-50 shadow-2xl rounded-2xl p-4 sm:p-6 lg:p-8 overflow-y-auto max-h-[90vh]"
       >
-        <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center">
+        <h2 className="text-xl  sm:text-2xl font-bold mb-6 text-center">
           {t("editProfileModal.Edit Profile")}
         </h2>
 
