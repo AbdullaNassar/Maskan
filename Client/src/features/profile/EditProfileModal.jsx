@@ -30,7 +30,6 @@ export default function EditProfileModal({ onClose, onSuccess }) {
       });
 
       await axiosInstance.patch("/users", formData);
-      toast.success("Profile updated successfully");
       onSuccess();
       onClose();
     } catch (err) {
