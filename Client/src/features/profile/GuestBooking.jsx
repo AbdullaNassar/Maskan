@@ -122,7 +122,7 @@ function BookingItem({ booking }) {
   const PaymentIcon = paymentStyle.icon;
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+    <div className="bg-gray-50 rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
       {/* Image Section */}
       <div className="relative h-64 overflow-hidden">
         <img

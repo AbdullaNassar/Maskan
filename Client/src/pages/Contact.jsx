@@ -66,10 +66,10 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Contact Form */}
           <div className="order-2 lg:order-1">
-            <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100">
+            <div className="bg-gray-50 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100">
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                  {t("contact. Get in Touch")}
+                  {t("contact.Get in Touch")}
                 </h2>
                 <div className="w-12 h-1 bg-[#C69963] rounded-full"></div>
               </div>
@@ -86,7 +86,7 @@ export default function Contact() {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.name}
-                    className="w-full border-2 border-gray-200 focus:border-[#C69963] focus:ring-2 focus:ring-[#C69963]/20 px-4 py-3 rounded-xl outline-none text-sm transition-all duration-200 bg-gray-50 hover:bg-white"
+                    className="w-full border-2 border-gray-200 focus:border-[#C69963] focus:ring-2 focus:ring-[#C69963]/20 px-4 py-3 rounded-xl outline-none text-sm transition-all duration-200 bg-gray-50 hover:bg-text-50"
                     placeholder={t("contact.nameLabel")}
                   />
                   <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"></div>
@@ -111,7 +111,7 @@ export default function Contact() {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.email}
-                    className="w-full border-2 border-gray-200 focus:border-[#C69963] focus:ring-2 focus:ring-[#C69963]/20 px-4 py-3 rounded-xl outline-none text-sm transition-all duration-200 bg-gray-50 hover:bg-white"
+                    className="w-full border-2 border-gray-200 focus:border-[#C69963] focus:ring-2 focus:ring-[#C69963]/20 px-4 py-3 rounded-xl outline-none text-sm transition-all duration-200 bg-gray-50 hover:bg-text-50"
                     placeholder={t("contact.emailLabel")}
                   />
                   <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"></div>
@@ -135,7 +135,7 @@ export default function Contact() {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.message}
-                    className="w-full border-2 border-gray-200 focus:border-[#C69963] focus:ring-2 focus:ring-[#C69963]/20 px-4 py-3 rounded-xl outline-none resize-none text-sm transition-all duration-200 bg-gray-50 hover:bg-white"
+                    className="w-full border-2 border-gray-200 focus:border-[#C69963] focus:ring-2 focus:ring-[#C69963]/20 px-4 py-3 rounded-xl outline-none resize-none text-sm transition-all duration-200 bg-gray-50 hover:bg-text-50"
                     placeholder={t("contact.msgPlaceholder")}
                   />
                   <div className="absolute top-3 right-0 pr-3 flex items-start pointer-events-none"></div>
@@ -191,79 +191,4 @@ export default function Contact() {
       </div>
     </form>
   );
-
-  // return (
-  //   <form
-  //     onSubmit={formik.handleSubmit}
-  //     className="max-w-md w-full mx-auto mt-14 mb-8 p-6 bg-gray-50 rounded-2xl shadow-2xl hover:shadow-2xl transition-shadow duration-300"
-  //   >
-  //     <SEO
-  //       title="Contact Maskn | Rent Apartments & Homes in Egypt"
-  //       description="Need help? Contact Maskn for assistance with your bookings and listings."
-  //     />
-  //     <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-  //       {t("contact.title")}
-  //     </h2>
-
-  //     {/* Name */}
-  //     <div className="mb-4">
-  //       <label className="block text-gray-700 font-medium mb-2 text-sm">
-  //         {t("contact.nameLabel")}
-  //       </label>
-  //       <input
-  //         name="name"
-  //         type="text"
-  //         onChange={formik.handleChange}
-  //         onBlur={formik.handleBlur}
-  //         value={formik.values.name}
-  //         className="w-full border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-400 px-3 py-2 rounded-md outline-none text-sm"
-  //       />
-  //       {formik.touched.name && formik.errors.name && (
-  //         <p className="text-red-500 text-xs mt-1">{formik.errors.name}</p>
-  //       )}
-  //     </div>
-
-  //     {/* Email */}
-  //     <div className="mb-4">
-  //       <label className="block text-gray-700 font-medium mb-2 text-sm">
-  //         {t("contact.emailLabel")}
-  //       </label>
-  //       <input
-  //         name="email"
-  //         type="email"
-  //         onChange={formik.handleChange}
-  //         onBlur={formik.handleBlur}
-  //         value={formik.values.email}
-  //         className="w-full border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-400 px-3 py-2 rounded-md outline-none text-sm"
-  //       />
-  //       {formik.touched.email && formik.errors.email && (
-  //         <p className="text-red-500 text-xs mt-1">{formik.errors.email}</p>
-  //       )}
-  //     </div>
-  //     {/* Message */}
-  //     <div className="mb-4">
-  //       <label className="block text-gray-700 font-medium mb-2 text-sm">
-  //         {t("contact.messageLabel")}
-  //       </label>
-  //       <textarea
-  //         name="message"
-  //         rows="4"
-  //         onChange={formik.handleChange}
-  //         onBlur={formik.handleBlur}
-  //         value={formik.values.message}
-  //         className="w-full border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-400 px-3 py-2 rounded-md outline-none resize-none text-sm"
-  //       />
-  //       {formik.touched.message && formik.errors.message && (
-  //         <p className="text-red-500 text-xs mt-1">{formik.errors.message}</p>
-  //       )}
-  //     </div>
-
-  //     <button
-  //       type="submit"
-  //       className="w-full bg-primarry text-white py-2 rounded-md font-semibold hover:bg-primarry-hover hover:cursor-pointer transition text-sm"
-  //     >
-  //       {t("contact.submit")}
-  //     </button>
-  //   </form>
-  // );
 }

@@ -182,9 +182,6 @@ export default function Header() {
                     {t("header.profile")}
                   </Link>
                 </li>
-                <li>
-                  <Link to="/settings">{t("header.settings")}</Link>
-                </li>
                 <li onClick={logout}>
                   <Link to="/login">{t("header.logout")}</Link>
                 </li>

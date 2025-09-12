@@ -19,7 +19,7 @@
     "toastSuccess": "Email sent successfully!",
     "toastError": "Failed to send email",
     "description": "We'd love to hear from you. Send us a message and we'll respond assoon as possible.",
-    " Get in Touch": "Get in Touch" 
+    "Get in Touch": "Get in Touch"
   },
   "hero": {
     "title": "Find your perfect rental in Egypt",
@@ -291,7 +291,7 @@
     "Ready to Find Your Dream Home?": "Ready to Find Your Dream Home?",
     "Join thousands of satisfied residents who've found their perfectapartment through our platform.": "Join thousands of satisfied residents who've found their perfectapartment through our platform.",
     "Browse All Apartments": "Browse All Apartments",
-    "Poublar home": "Popular home",
+    "Popular home": "Popular home",
     "View Host Profile": "View Host Profile",
     "placeholders": {
       "Enter the property government": "Enter the property government",
@@ -417,7 +417,9 @@
     "Available": "Available",
     "Available Apartments": "Available Apartments",
     "out of": "out of ",
-    "bookings": "bookings"
+    "bookings": "bookings",
+    "Total Price": "Total Price",
+    "Bookings details for": "Bookings details for"
   },
   "deleteModal": {
     "Are you sure you want to delete this {title} permanently? Thisaction cannot be undone.": " Are you sure you want to delete this permanently? This action cannot be undone.",

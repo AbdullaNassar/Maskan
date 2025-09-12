@@ -19,7 +19,7 @@
     "toastSuccess": "تم إرسال البريد الإلكتروني بنجاح!",
     "toastError": "فشل في إرسال البريد الإلكتروني",
     "description": "نحن نود سماع رأيك. أرسل لنا رسالة وسنرد عليك في أقرب وقت ممكن.",
-    " Get in Touch": "تواصل معنا"
+    "Get in Touch": "تواصل معنا"
   },
   "hero": {
     "title": "ابحث عن إيجارك المثالي في مصر",
@@ -417,7 +417,9 @@
     "Available": "متاحة",
     "Available Apartments": "الشقق المتاحة",
     "out of": "من ",
-    "bookings": "الحجوزات"
+    "bookings": "الحجوزات",
+    "Total Price": "اجمالى المبلغ",
+    "Bookings details for": "تفاصيل الحجوزات الخاصة بـ"
   },
   "deleteModal": {
     "Are you sure you want to delete this {title} permanently? Thisaction cannot be undone.": "هل أنت متأكد أنك تريد الحذف نهائيًا؟ لا يمكن التراجع عن هذا الإجراء.",

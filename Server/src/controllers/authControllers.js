@@ -1,7 +1,7 @@
 import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import { sendOTPEmail } from "../utilities/sendEmail.utilies.js";
+// import { sendOTPEmail } from "../utilities/sendEmail.utilies.js";
 import { asyncHandler } from "../middlewares/asyncHandlerError.middleware.js";
 import AppError from "../utilities/appError.js";
 
@@ -63,8 +63,8 @@ export const signUp = asyncHandler(async (req, res, next) => {
     );
   }
 
-  const otp = Math.floor(100000 + Math.random() * 900000).toString();
-  const otpExpiresAt = new Date(Date.now() + 10 * 60 * 1000);
+  // const otp = Math.floor(100000 + Math.random() * 900000).toString();
+  // const otpExpiresAt = new Date(Date.now() + 10 * 60 * 1000);
 
   const profilePic =
     "https://res.cloudinary.com/dxfmw4nch/image/upload/v1753882410/profilePics/muxts6jedfnjupzdqzgf.jpg";
@@ -78,11 +78,11 @@ export const signUp = asyncHandler(async (req, res, next) => {
     dateOfBirth,
     phoneNumber,
     profilePic,
-    otp,
-    otpExpiresAt,
+    // otp,
+    // otpExpiresAt,
   });
 
-  await sendOTPEmail(user.email, otp);
+  // await sendOTPEmail(user.email, otp);
 
   res.status(201).json({
     status: "success",
