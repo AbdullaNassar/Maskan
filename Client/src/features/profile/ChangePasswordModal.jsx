@@ -12,7 +12,6 @@ import { Navigate, useNavigate } from "react-router-dom";
 export default function ChangePasswordModal({ onClose, onSuccess }) {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
-  const navigate = useNavigate();
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -30,7 +29,7 @@ export default function ChangePasswordModal({ onClose, onSuccess }) {
 
         if (onSuccess) onSuccess();
         onClose();
-        navigate("/login");
+        // navigate("/login");
       })
       .catch((err) => {
         // SetErrMessage(err?.response?.data?.message);
