@@ -18,7 +18,7 @@ import {
 import { useListBookings } from "../features/booking/useListBookings";
 import Spinner from "../ui/Spinner";
 import Error from "../ui/Error";
-import { formatDate, formatPrice } from "../utils/helper";
+import { formatDate, formatNumber, formatPrice } from "../utils/helper";
 import { useTranslation } from "react-i18next";
 import SEO from "../component/SEO";
 
@@ -31,7 +31,7 @@ export default function ListBookings() {
 
   // handel loading and error states
   if (isLoading) return <Spinner />;
-  if (error) return <Error message={error.message} />;
+  if (error) return <Error message={error?.message} />;
 
   // handle empty state
   if (!data.results) return <NoBookings />;
@@ -43,7 +43,10 @@ export default function ListBookings() {
         description={`View and manage all bookings for ${data?.bookings?.[0].listing?.title}, Egypt on Maskn.`}
       />
       <h2 className="text-xl font-semibold">
-        Bookings details for {data?.bookings?.[0].listing?.title}
+        {t("profile.Bookings details for")}{" "}
+        {lang === "en"
+          ? `${data?.bookings?.[0].listing?.title}`
+          : `${data?.bookings?.[0].listing?.arTitle}`}
       </h2>
       <TotalBookingsMinimal data={data} />
       <div className="grid sm:grid-cols-2 gap-x-2 gap-y-4">
@@ -56,6 +59,8 @@ export default function ListBookings() {
 }
 
 const TotalBookingsMinimal = ({ data }) => {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language;
   return (
     <div className="bg-gray-50 rounded-lg shadow-md border-l-4 border-blue-500 p-6">
       <div className="flex items-center">
@@ -63,9 +68,11 @@ const TotalBookingsMinimal = ({ data }) => {
           <Users className="h-6 w-6 text-blue-600" />
         </div>
         <div>
-          <p className="text-gray-600 text-sm font-medium">Total Bookings</p>
+          <p className="text-gray-600 text-sm font-medium">
+            {t("profile.Total Bookings")}
+          </p>
           <h2 className="text-3xl font-bold text-gray-900">
-            {data.results.toLocaleString()}
+            {formatNumber(data.results.toLocaleString(), lang)}
           </h2>
         </div>
       </div>
@@ -73,6 +80,9 @@ const TotalBookingsMinimal = ({ data }) => {
   );
 };
 function ListItem({ list }) {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language;
+
   const getPaymentStatusStyle = (status) => {
     switch (status?.toLowerCase()) {
       case "paid":
@@ -132,16 +142,20 @@ function ListItem({ list }) {
           <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg">
             <Calendar className="h-5 w-5 text-green-600" />
             <div>
-              <p className="text-sm font-medium text-green-800">Check-in</p>
-              <p className="text-green-800">{formatDate(list.checkIn)}</p>
+              <p className="text-sm font-medium text-green-800">
+                {t("profile.Check-in")}
+              </p>
+              <p className="text-green-800">{formatDate(list.checkIn, lang)}</p>
             </div>
           </div>
 
           <div className="flex items-center space-x-3 p-3 bg-red-50 rounded-lg">
             <CalendarCheck className="h-5 w-5 text-red-600" />
             <div>
-              <p className="text-sm font-medium text-red-800">Check-out</p>
-              <p className="text-red-700">{formatDate(list.checkOut)}</p>
+              <p className="text-sm font-medium text-red-800">
+                {t("profile.Check-out")}
+              </p>
+              <p className="text-red-700">{formatDate(list.checkOut, lang)}</p>
             </div>
           </div>
         </div>
@@ -151,9 +165,11 @@ function ListItem({ list }) {
           <div className="flex items-center space-x-2">
             <DollarSign className="h-5 w-5 text-green-600" />
             <div>
-              <p className="text-sm text-gray-600">Total Price</p>
+              <p className="text-sm text-gray-600">
+                {t("profile.Total Price")}
+              </p>
               <p className="text-2xl font-bold text-gray-900">
-                {formatPrice(list.totalPrice)}
+                {formatPrice(list.totalPrice, lang)}
               </p>
             </div>
           </div>
@@ -165,7 +181,7 @@ function ListItem({ list }) {
             <span
               className={`text-sm font-medium ${paymentStyle.text} capitalize`}
             >
-              {list.paymentStatus}
+              {t("profile.paid")}
             </span>
           </div>
         </div>

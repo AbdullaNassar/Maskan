@@ -69,7 +69,7 @@ export default function Contact() {
             <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100">
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                  Get in Touch
+                  {t("contact.Get in Touch")}
                 </h2>
                 <div className="w-12 h-1 bg-[#C69963] rounded-full"></div>
               </div>
