@@ -1,7 +1,7 @@
 import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-// import { sendOTPEmail } from "../utilities/sendEmail.utilies.js";
+import { sendOTPEmail } from "../utilities/sendEmail.utilies.js";
 import { asyncHandler } from "../middlewares/asyncHandlerError.middleware.js";
 import AppError from "../utilities/appError.js";
 
