@@ -11,12 +11,12 @@ const contactSchema = new mongoose.Schema(
             required: [true, "Name is required"],
             trim: true,
         },
-            email: {
+        email: {
             type: String,
             required: [true, "Email is required"],
             match: [/^\S+@\S+\.\S+$/, "Please use a valid email address"],
         },
-            subject: {
+        subject: {
             type: String,
             required: [true, "Subject is required"],
         },
