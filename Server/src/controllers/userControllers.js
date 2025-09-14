@@ -1,6 +1,6 @@
 import userModel from "../models/userModel.js";
 import listModel from "../models/listModel.js";
-import { sendOTPEmail } from "../utilities/sendEmail.utilies.js";
+import { sendMail, sendOTPEmail } from "../utilities/sendEmail.utilies.js";
 import bcrypt from "bcryptjs";
 import Crypto from "crypto-js";
 import jwt from "jsonwebtoken";
@@ -170,7 +170,7 @@ export const verifyOTP = asyncHandler(async (req, res) => {
     process.env.USER_OTP_KEY
   ).toString(Crypto.enc.Utf8);
 
-  const isOTPValid = decryptUserOtp === otp && user.otpExpiresAt > new Date();
+  const isOTPValid = decryptUserOtp == otp && user.otpExpiresAt > new Date();
 
   if (!isOTPValid) {
     throw new AppError(
@@ -244,7 +244,8 @@ export const resendOTP = asyncHandler(async (req, res) => {
   user.otpExpiresAt = otpExpiresAt;
   await user.save();
 
-  await sendOTPEmail(user.email, otp);
+  // await sendOTPEmail(user.email, otp);
+  await sendMail(user.email, otp);
 
   res.status(200).json({
     status: "Success",
@@ -294,7 +295,8 @@ export const requestPasswordReset = asyncHandler(async (req, res) => {
   await user.save();
 
   // Send OTP email
-  await sendOTPEmail(user.email, otp, false);
+  // await sendOTPEmail(user.email, otp, false);
+  await sendMail(user.email, otp, false);
 
   res.status(200).json({
     status: "Success",

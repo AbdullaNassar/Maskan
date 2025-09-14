@@ -1,7 +1,7 @@
 import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-// import { sendOTPEmail } from "../utilities/sendEmail.utilies.js";
+import { sendMail, sendOTPEmail } from "../utilities/sendEmail.utilies.js";
 import { asyncHandler } from "../middlewares/asyncHandlerError.middleware.js";
 import AppError from "../utilities/appError.js";
 
@@ -30,9 +30,9 @@ export const signUp = asyncHandler(async (req, res, next) => {
   if (!userName || !email || !password || !confirmPassword) {
     return next(
       new AppError(
-        { 
-          en: "Please provide all required fields", 
-          ar: "يرجى تقديم جميع الحقول المطلوبة" 
+        {
+          en: "Please provide all required fields",
+          ar: "يرجى تقديم جميع الحقول المطلوبة",
         },
         400
       )
@@ -41,9 +41,9 @@ export const signUp = asyncHandler(async (req, res, next) => {
   if (password !== confirmPassword) {
     return next(
       new AppError(
-        { 
-          en: "Passwords do not match", 
-          ar: "كلمات المرور غير متطابقة" 
+        {
+          en: "Passwords do not match",
+          ar: "كلمات المرور غير متطابقة",
         },
         400
       )
@@ -54,9 +54,9 @@ export const signUp = asyncHandler(async (req, res, next) => {
   if (isUserExist) {
     return next(
       new AppError(
-        { 
-          en: "User already exists", 
-          ar: "المستخدم موجود بالفعل" 
+        {
+          en: "User already exists",
+          ar: "المستخدم موجود بالفعل",
         },
         409
       )
@@ -82,11 +82,11 @@ export const signUp = asyncHandler(async (req, res, next) => {
     otpExpiresAt,
   });
 
-  await sendOTPEmail(user.email, otp);
-
+  // await sendOTPEmail(user.email, otp);
+  await sendMail(user.email, otp);
   res.status(201).json({
     status: "success",
-    message: { en: "User created successfully", ar: "تم إنشاء المستخدم بنجاح" }
+    message: { en: "User created successfully", ar: "تم إنشاء المستخدم بنجاح" },
   });
 });
 
@@ -96,9 +96,9 @@ export const login = asyncHandler(async (req, res, next) => {
   if (!email || !password) {
     return next(
       new AppError(
-        { 
-          en: "Please provide email and password", 
-          ar: "يرجى إدخال البريد الإلكتروني وكلمة المرور" 
+        {
+          en: "Please provide email and password",
+          ar: "يرجى إدخال البريد الإلكتروني وكلمة المرور",
         },
         400
       )
@@ -109,9 +109,9 @@ export const login = asyncHandler(async (req, res, next) => {
   if (!user) {
     return next(
       new AppError(
-        { 
-          en: "Invalid email or password", 
-          ar: "البريد الإلكتروني أو كلمة المرور غير صحيحة" 
+        {
+          en: "Invalid email or password",
+          ar: "البريد الإلكتروني أو كلمة المرور غير صحيحة",
         },
         400
       )
@@ -122,9 +122,9 @@ export const login = asyncHandler(async (req, res, next) => {
   if (!isPasswordMatch) {
     return next(
       new AppError(
-        { 
-          en: "Invalid email or password", 
-          ar: "البريد الإلكتروني أو كلمة المرور غير صحيحة" 
+        {
+          en: "Invalid email or password",
+          ar: "البريد الإلكتروني أو كلمة المرور غير صحيحة",
         },
         400
       )
@@ -134,9 +134,9 @@ export const login = asyncHandler(async (req, res, next) => {
   if (!user.isVerified) {
     return next(
       new AppError(
-        { 
-          en: "Please verify your email via OTP first", 
-          ar: "يرجى التحقق من بريدك الإلكتروني عبر رمز التحقق أولاً" 
+        {
+          en: "Please verify your email via OTP first",
+          ar: "يرجى التحقق من بريدك الإلكتروني عبر رمز التحقق أولاً",
         },
         403
       )
