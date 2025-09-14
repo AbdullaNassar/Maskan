@@ -6,7 +6,6 @@ export async function getReviews(listingId) {
   const { data: reviewForSpecificList } = await axiosInstance.get(
     `/ratings/listing/${listingId}`
   );
-  console.log("api reviwe =>", reviewForSpecificList);
   return reviewForSpecificList;
 }
 

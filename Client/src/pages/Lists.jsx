@@ -159,7 +159,6 @@ export default function Lists() {
 
     setFilter(newFilter);
     refetch();
-    // console.log(startDate, endDate);
   }
 
   const totalPages = Math.ceil(lists.total / PAGE_SIZE);
@@ -302,7 +301,7 @@ export default function Lists() {
           <hr className="text-gray-500" />
 
           {lists.data.map((list) => {
-            return <ListItem list={list} />;
+            return <ListItem key={list.id} list={list} />;
           })}
 
           {!lists.data.length && <Empty resourceName="lists" />}

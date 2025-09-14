@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
-import axios from "axios";
 import * as YUP from "yup";
 import { useNavigate } from "react-router-dom";
 import { FaSpinner, FaEye, FaEyeSlash } from "react-icons/fa";
@@ -23,13 +22,11 @@ export default function Signup() {
   function handleRegister(value) {
     SetIsLoading(true);
     const { terms, ...payload } = value;
-    console.log(payload);
-    axios
-      .post("http://localhost:8000/api/v1/users/signup", payload)
+    axiosInstance
+      .post("/users/signup", payload)
       .then((res) => {
         const lang = i18n.language || "en";
         const msg = res?.data?.message?.[lang] || "signup success";
-        console.log(msg, res);
         toast.success(msg);
         navigate("/verifyOtp", { state: { email: payload.email } });
         // navigate("/");
@@ -38,7 +35,6 @@ export default function Signup() {
         const lang = i18n.language || "en";
         const msg = err.response?.data?.message?.[lang] || "Failed to sign up";
         SetErrMessage(msg);
-        console.log(msg);
         toast.error(msg);
       })
       .finally(() => {

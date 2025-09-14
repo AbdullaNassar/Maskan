@@ -37,7 +37,7 @@ export default function Profile() {
       setShowEditModal(false);
       toast.success(t("toast.Profile updated successfully"));
     } catch (err) {
-      console.error("Failed to refetch user data:", err);
+      // console.error("Failed to refetch user data:", err);
       toast.error(
         t("toast.profile updated but failed to refresh please reload the page.")
       );

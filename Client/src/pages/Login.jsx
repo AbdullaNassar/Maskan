@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useFormik } from "formik";
-import axios from "axios";
 import * as YUP from "yup";
 import { useNavigate } from "react-router-dom";
 import { FaSpinner, FaEye, FaEyeSlash } from "react-icons/fa";
@@ -9,7 +8,6 @@ import { toast } from "sonner";
 import Header from "../ui/Header";
 import { axiosInstance } from "../services/axiosInstance";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
 import SEO from "../component/SEO";
 
 export default function Login() {
@@ -24,14 +22,13 @@ export default function Login() {
       .post("/users/login", value, {
         withCredentials: true,
       })
-      .then((res) => {
+      .then(() => {
         navigate("/");
       })
       .catch((err) => {
         const lang = i18n.language || "en";
         const msg = err.response?.data?.message?.[lang] || "An error occurred";
         SetErrMessage(msg);
-        console.log(msg);
         toast.error(msg);
       })
       .finally(() => {
@@ -47,7 +44,7 @@ export default function Login() {
     }
 
     axiosInstance
-      .post("http://localhost:8000/api/v1/users/request-password-reset", {
+      .post("/users/request-password-reset", {
         email,
       })
       .then(() => {

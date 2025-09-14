@@ -33,7 +33,7 @@ export default function EditProfileModal({ onClose, onSuccess }) {
       onSuccess();
       onClose();
     } catch (err) {
-      console.error("Profile update error:", err);
+      // console.error("Profile update error:", err);
       toast.error(err.response?.data?.message || "Failed to update profile");
     } finally {
       setIsSubmitting(false);

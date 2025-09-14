@@ -70,7 +70,6 @@ export default function AddList() {
   // handle images
   const handleFilesChange = (e) => {
     const file = Array.from(e.target.files);
-    console.log(file);
     if (!file) return;
 
     if (images.length + file.length > 5) {
@@ -88,7 +87,6 @@ export default function AddList() {
 
   const handleMapClick = (latlng) => {
     setPosition(latlng);
-    console.log("Latitude:", latlng.lat, "Longitude:", latlng.lng);
   };
 
   const submitForm = (data) => {

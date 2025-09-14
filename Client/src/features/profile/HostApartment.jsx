@@ -29,7 +29,7 @@ export default function HostApartment() {
   return (
     <div className="space-y-2 divide-y-2">
       {hostLists.lists.map((list) => {
-        return <ListOwnerItem list={list} />;
+        return <ListOwnerItem key={list?.id} list={list} />;
       })}
     </div>
   );

@@ -46,7 +46,7 @@ export default function GuestBooking() {
       <TotalBookingsMinimal data={data.results} />
       <div className="space-y-4">
         {bookings.map((booking) => {
-          return <BookingItem booking={booking} />;
+          return <BookingItem key={booking._id} booking={booking} />;
         })}
       </div>
     </div>

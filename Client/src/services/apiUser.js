@@ -15,7 +15,7 @@ export async function getCurrentUser() {
     ) {
       return null;
     } else {
-      console.log(error);
+      // console.log(error);
       const currentLang = getCurrentLanguage();
       const message = error?.response?.data?.message?.[currentLang];
       if (message) {
@@ -36,7 +36,7 @@ export async function getFavsList() {
     const res = await axiosInstance.get("/users/favorites");
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     if (err.response?.status === 401) return [];
     const currentLang = getCurrentLanguage();
     const message = err?.response?.data?.message?.[currentLang];
@@ -52,7 +52,7 @@ export async function toggleFavList(id) {
     const res = await axiosInstance.post(`/users/toggle/${id}`);
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const currentLang = getCurrentLanguage();
     if (err.response?.status === 401) {
       const msg =
@@ -72,7 +72,7 @@ export async function getPublicUserInfo(id) {
     const res = await axiosInstance.get(`/users/public/${id}`);
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const currentLang = getCurrentLanguage();
     const message = err?.response?.data?.message?.[currentLang];
     if (message) {

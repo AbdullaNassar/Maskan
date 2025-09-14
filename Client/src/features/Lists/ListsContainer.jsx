@@ -57,6 +57,7 @@ export default function ListsContainer() {
       {data?.map((govern, idx) => {
         return (
           <ListsBox
+            key={idx}
             govern={govern}
             heading={listHeading[idx % listHeading.length]}
           />

@@ -125,7 +125,8 @@
       "roleInvalid": "Role must be either guest or host",
       "roleRequired": "Role is required",
       "termsRequired": "You must agree to the Terms & Conditions"
-    }
+    },
+    "spam": "If you can't find the email, please check your Spam folder."
   },
   "login": {
     "title": "Welcome Back",

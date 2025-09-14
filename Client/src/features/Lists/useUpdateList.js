@@ -10,7 +10,7 @@ export function useUpdateList() {
       // queryClient.invalidateQueries(["listDetails", "lists"]);
     },
     onError: (error) => {
-      console.error("Update list failed:", error.message);
+      // console.error("Update list failed:", error.message);
     },
   });
   return { mutate, isPending };

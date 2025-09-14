@@ -68,7 +68,7 @@ export default function VerifyOtp() {
   };
 
   return (
-    <>
+    <div className="bg-gray-100">
       <SEO
         title="Verify Your Account | Maskn"
         description="Enter the OTP sent to your email to verify your Maskn account and start booking homes in Egypt."
@@ -110,6 +110,10 @@ export default function VerifyOtp() {
             </button>
           </div>
 
+          <p className="text-xs sm:text-sm text-gray-500 text-center my-4 flex items-center">
+            {t("signup.spam")}
+          </p>
+
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
               {t("verifyOtp.resend.prompt")}{" "}
@@ -123,6 +127,6 @@ export default function VerifyOtp() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

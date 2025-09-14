@@ -38,7 +38,6 @@ export default function ListingDetails() {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
   const queryClient = useQueryClient();
-
   // hooks
   const { mutate: toggleFavs } = useToggleFavs();
   let { data: favs, isLoading: loadingFavs, error: errorFavs } = useFavsList();
@@ -116,7 +115,6 @@ export default function ListingDetails() {
       {
         onSuccess: (data) => {
           navigate("/");
-          console.log(data);
           window.location.href = data.session.url;
         },
         onError: (error) => {
@@ -140,6 +138,7 @@ export default function ListingDetails() {
     if (id === user?.user?.id) navigate("/profile");
     else navigate(`/PublicProfile/${id}`);
   }
+
   return (
     <div className="flex flex-col gap-8 ">
       <SEO
@@ -147,9 +146,9 @@ export default function ListingDetails() {
         description={`Book ${data.title} in ${data.city}, Egypt. Enjoy a comfortable stay with Maskn.`}
       />
       <div className="carousel rounded-box space-x-3.5 bg-gray-50 p-3">
-        {data.photos.map((item) => {
+        {data.photos.map((item, idx) => {
           return (
-            <div className="carousel-item">
+            <div key={idx} className="carousel-item">
               <img className="h-92" src={item} alt="Burger" />
             </div>
           );
@@ -218,7 +217,10 @@ export default function ListingDetails() {
         <div className="flex gap-3 flex-wrap">
           {data?.amenitiesId.map((item) => {
             return (
-              <div className="w-full sm:w-fit flex items-center gap-2 p-3 rounded-sm font-semibold border border-gray-300">
+              <div
+                key={item._id}
+                className="w-full sm:w-fit flex items-center gap-2 p-3 rounded-sm font-semibold border border-gray-300"
+              >
                 <img src={item.icon} alt="aminity icon" className="size-8" />
                 {/* <span className="text-3xl">
                   <PiSwimmingPoolLight />

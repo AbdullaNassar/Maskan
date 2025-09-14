@@ -1,8 +1,3 @@
-import logo from "/imgs/logo.svg";
-import logoBlack from "/imgs/logoBlack.svg";
-import logoar from "/imgs/logoar.svg";
-import logoardark from "/imgs/logoardark.svg";
-
 import { TbWorld } from "react-icons/tb";
 import { CiDark, CiLogin } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
@@ -16,10 +11,10 @@ import { SidebarModal } from "./Modal";
 import { useTranslation } from "react-i18next";
 import Spinner from "./Spinner";
 import Error from "./Error";
+import Logo from "./Logo";
 
 export default function Header() {
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
 
@@ -47,25 +42,7 @@ export default function Header() {
   return (
     // <header className="bg-blue-400">header</header>
     <header className=" flex justify-between items-center px-8 pt-4 pb-4 border-b-gray-300  border-b-2">
-      <button
-        onClick={() => navigate("/")}
-        className="cursor-pointer hidden md:block md:w-48 "
-      >
-        <img
-          src={
-            theme === "light"
-              ? i18n.language === "en"
-                ? logo
-                : logoar
-              : i18n.language === "en"
-              ? logoBlack
-              : logoardark
-          }
-          className="w-full"
-          alt="Maskn Logo"
-        />
-      </button>
-
+      <Logo />
       {/* Mobile menu */}
       <button
         onClick={() => setIsOpenSidebar(true)}

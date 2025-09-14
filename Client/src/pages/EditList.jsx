@@ -88,7 +88,6 @@ export default function EditList() {
 
   const handleFilesChange = (e) => {
     const file = Array.from(e.target.files);
-    // console.log(file);
     if (!file) return;
 
     if (images.length + file.length > 5) {
@@ -125,7 +124,6 @@ export default function EditList() {
 
       // also set position for the map if you have lat/lng
       if (data.data?.location?.coordinates?.coordinates?.[0]) {
-        // console.log("uuuuu");
         setPosition({
           lng: data.data?.location?.coordinates?.coordinates?.[0],
           lat: data.data?.location?.coordinates?.coordinates?.[1],
@@ -141,7 +139,6 @@ export default function EditList() {
 
   const handleMapClick = (latlng) => {
     setPosition(latlng);
-    // console.log("Latitude:", latlng.lat, "Longitude:", latlng.lng);
   };
 
   // handel loading and errors states
@@ -177,7 +174,6 @@ export default function EditList() {
       return;
     }
     data.amenitiesId = data.amenitiesId?.map((item) => item._id);
-    console.log(data);
     updateList(
       { id: list._id, data },
       {
@@ -465,9 +461,10 @@ export default function EditList() {
             )}
             {curImages.length && (
               <div className="flex justify-center mt-4 gap-2">
-                {curImages.map((image) => {
+                {curImages.map((image, idx) => {
                   return (
                     <img
+                      key={idx}
                       className="relative w-24 h-24 rounded overflow-hidden shadow"
                       src={image}
                       alt="list pics"

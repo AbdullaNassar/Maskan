@@ -42,7 +42,7 @@ export async function createList(newList) {
     });
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const message = err?.response?.data?.message[lang];
     if (message) {
       throw new Error(message);
@@ -62,7 +62,7 @@ export async function getAllLists({ page = 1, filter = {} }) {
     });
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const message = err?.response?.data?.message[lang];
     if (message) {
       throw new Error(message);
@@ -76,7 +76,7 @@ export async function getListById(id) {
     const res = await axiosInstance.get(`/lists/${id}`);
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const message = err?.response?.data?.message[lang];
     if (message) {
       throw new Error(message);
@@ -90,7 +90,7 @@ export async function getListsByGovern() {
     const res = await axiosInstance.get("lists/governorate");
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const message = err?.response?.data?.message[lang];
     if (message) {
       throw new Error(message);
@@ -104,7 +104,7 @@ export async function searchLists(query) {
     const res = await axiosInstance.get(`/lists/search/?query=${query}`);
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const message = err?.response?.data?.message[lang];
     if (message) {
       throw new Error(message);
@@ -118,7 +118,7 @@ export async function getHostLists() {
     const res = await axiosInstance.get("/lists/hostLists");
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const message = err?.response?.data?.message[lang];
     if (message) {
       throw new Error(message);
@@ -132,7 +132,7 @@ export async function deleteList(id) {
     const res = await axiosInstance.delete(`/lists/${id}`);
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const message = err?.response?.data?.message[lang];
     if (message) {
       throw new Error(message);
@@ -167,7 +167,7 @@ export async function updateList({ id, data }) {
 
     return response.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const currentLang = getCurrentLanguage();
     const message = err?.response?.data?.message?.[currentLang];
     if (message) {

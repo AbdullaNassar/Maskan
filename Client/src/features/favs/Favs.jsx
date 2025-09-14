@@ -22,7 +22,7 @@ export default function Favs() {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 w-full mt-4">
       {favs?.map((item) => {
-        return <FavItem list={item} />;
+        return <FavItem key={item.id} list={item} />;
       })}
     </div>
   );

@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getAllLists } from "../../services/apiLists";
 export function useLists({ page = 1, filter = {} }) {
-  console.log("filter", filter);
   const {
     data: lists,
     isLoading,

@@ -11,10 +11,9 @@ export async function getCheckoutSession({ listId, checkIn, checkOut }) {
       `/bookings/checkout-session/${listId}`,
       { checkIn, checkOut }
     );
-    console.log(response.data);
     return response.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const currentLang = getCurrentLanguage();
     const message = err?.response?.data?.message?.[currentLang];
     if (message) {
@@ -29,7 +28,7 @@ export async function getAllGuestBookings() {
     const res = await axiosInstance.get("/bookings/guest");
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const currentLang = getCurrentLanguage();
     const message = err?.response?.data?.message?.[currentLang];
     if (message) {
@@ -44,7 +43,7 @@ export async function getListBookings({ listId }) {
     const res = await axiosInstance.get(`/bookings/host/${listId}`);
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const currentLang = getCurrentLanguage();
     const message = err?.response?.data?.message?.[currentLang];
     if (message) {

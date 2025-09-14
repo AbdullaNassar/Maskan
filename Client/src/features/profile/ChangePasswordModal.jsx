@@ -35,7 +35,6 @@ export default function ChangePasswordModal({ onClose, onSuccess }) {
         // SetErrMessage(err?.response?.data?.message);
         const msg =
           err?.response?.data?.message?.[lang] || t("changePassword.error");
-        console.log("changePasswordModal => err response msg :", msg);
         toast.error(msg);
       })
       .finally(() => {

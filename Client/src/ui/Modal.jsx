@@ -33,7 +33,6 @@ export function SidebarModal({ isOpen, onCancel }) {
   }
   if (isLoading) return <Spinner />;
   if (error) return <Error message={error.message} />;
-  console.log(user);
 
   function handleLog() {
     navigate("/login");

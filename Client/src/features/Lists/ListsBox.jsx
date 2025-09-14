@@ -20,7 +20,7 @@ export default function ListsBox({ govern, heading }) {
           style={{ gridAutoRows: "1fr" }}
         >
           {lists?.map((list) => {
-            return <ListItemCard list={list} />;
+            return <ListItemCard key={list._id} list={list} />;
           })}
         </div>
       </div>

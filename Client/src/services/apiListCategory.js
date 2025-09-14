@@ -9,7 +9,7 @@ export const getListCategory = async () => {
     const res = await axiosInstance.get("/categories");
     return res.data;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     const currentLang = getCurrentLanguage();
     const message = err?.response?.data?.message?.[currentLang];
     if (message) {
