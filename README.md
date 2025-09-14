@@ -2,9 +2,22 @@
 
 **Maskn** is a real estate web application for renting homes across Egypt. It enables guests to browse apartments, make bookings, and provides hosts with the ability to list and manage their properties on the platform. 🔗 [Live-Demo](https://maskn.netlify.app/home)
 
+---
+
+📷 DEMO
+![Homepage](https://res.cloudinary.com/deuxt0stn/image/upload/v1757842354/Annotation_2025-09-14_122522_iw13rt.png)
+
+![Properties Section](https://res.cloudinary.com/deuxt0stn/image/upload/v1757842352/Annotation_2025-09-14_122619_djr74e.png)
+
+![Apartments Page](https://res.cloudinary.com/deuxt0stn/image/upload/v1757842351/Annotation_2025-09-14_122747_l9yxxa.png)
+
+![Profile](https://res.cloudinary.com/deuxt0stn/image/upload/v1757842348/Annotation_2025-09-14_122645_hmk6ec.png)
+
+---
+
 ## Features
 
-- User Management: Register, login, and role-based access (guest, host, admin)
+- User Management: Register, login, account confirmation, password reset and role-based access (guest, host, admin)
 - Listings: CRUD operations for properties. Guests can browse apartments, while hosts can add, edit, or delete their listings.
 - Search & Filter properties by government, dates, price, and amenities.
 - Reviews: Guests can rate and review properties after their stay.
@@ -28,23 +41,24 @@
 - **React Query**
 - **Axios**
 - **React Hook Form**
-- **React Hot Toast**
 - **i18next (Internationalization)**
+- **Sonner**
+- **AOS**
 
 ### Backend Tools
 
 - **Nodejs**
-- **Expressjs**
+- **Express**
 - **MongoDB**
 - **Mongoose (ODM)**
 - **Cloudinary**
 - **Stripe**
-- **Nodemailer**
+- **SendGrid**
 - **JWT**
 
 ## API Documentation
 
-Explore the API endpoints and their usage via our Swagger Documentation. [link](https://maskan.up.railway.app/api-docs/)
+Explore the API endpoints and their usage via our Swagger Documentation. [link](https://maskan-production.up.railway.app/api-docs/)
 
 ## Setup Instructions
 
@@ -104,4 +118,3 @@ npm run dev
 | **Abdullah Moemen** | [GitHub](https://github.com/AbdullaNassar) / [LinkedIn](https://www.linkedin.com/in/abdallah-moemen/)                  |
 | **Sherif Shoukry**  | [GitHub](https://github.com/sherifshoukryalqwatly) / [LinkedIn](https://www.linkedin.com/in/sherif-shukrii-08085022a/) |
 | **Ahmed Hisham**    | [GitHub](https://github.com/Ahmedkoraish) / [LinkedIn](https://www.linkedin.com/in/ahmed-hesham-hosny)                 |
-| **Mahmoud Fathy**   | [GitHub](https://github.com/MahmoudFathyTawfeek)                                                                       |
