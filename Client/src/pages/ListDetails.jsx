@@ -96,7 +96,7 @@ export default function ListingDetails() {
   });
 
   const data = list?.data;
-  const days = (endDate - startDate) / (1000 * 60 * 60 * 24);
+  const days = (endDate - startDate) / (1000 * 60 * 60 * 24) + 1;
 
   const validBooking = bookingsData?.data?.find(
     (b) =>

@@ -41,7 +41,6 @@
 - **Stripe**
 - **Nodemailer**
 - **JWT**
-- **Nodemailer**
 
 ## API Documentation
 

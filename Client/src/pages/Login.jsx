@@ -47,7 +47,7 @@ export default function Login() {
     }
 
     axiosInstance
-      .post("users/request-password-reset", {
+      .post("http://localhost:8000/api/v1/users/request-password-reset", {
         email,
       })
       .then(() => {
